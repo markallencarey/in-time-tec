@@ -12,7 +12,6 @@ const Time = () => {
     { name: '24 Hour', value: '2' }
   ]
 
-
   useEffect(() => {
     const today = new Date()
 
@@ -25,9 +24,9 @@ const Time = () => {
 
     if (time.hours >= 6 && time.hours <= 12) {
       setTimeMsg('Good Morning!')
-    } else if (time.hours <= 17) {
+    } else if (time.hours <= 17 && time.hours > 12) {
       setTimeMsg('Good Afternoon!')
-    } else if (time.hours <= 20) {
+    } else if (time.hours <= 20 && time.hours > 20) {
       setTimeMsg('Good Evening!')
     } else {
       setTimeMsg('Good Night!')
@@ -43,9 +42,13 @@ const Time = () => {
     time12 = time.hours - 12
   }
 
+  if (time12 < 1) {
+    time12 = 12
+  }
+
   return (
     <Container className='Time'>
-      <ButtonGroup toggle>
+      {/* <ButtonGroup toggle>
         {radios.map((radio, idx) => (
           <ToggleButton
             key={idx}
@@ -60,7 +63,7 @@ const Time = () => {
             {radio.name}
           </ToggleButton>
         ))}
-      </ButtonGroup>
+      </ButtonGroup> */}
       <h1 className='time-h1'>{time12}:{time.minutes} {time.amPm}</h1>
       <h2 className='time-h2'>{timeMsg}</h2>
     </Container>

@@ -21,9 +21,9 @@ const Weather = () => {
   return (
     <Container className='Weather'>
       <Container className='weather-temps'>
-        <h1>{tempF}°</h1>
-        <h4>High: {tempMaxF}°</h4>
-        <h4>Low: {tempMinF}°</h4>
+        <h1>{tempF}° F</h1>
+        <h4>High: {tempMaxF}° F</h4>
+        <h4>Low: {tempMinF}° F</h4>
       </Container>
       <Container className='weather-description'>
         <h3>{weather.description}</h3>

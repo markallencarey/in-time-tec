@@ -5,6 +5,7 @@ import { Container, Button } from 'react-bootstrap'
 const Quote = () => {
 
   const [quote, setQuote] = useState({})
+  const [isHovering, setIsHovering] = useState(false)
 
   const renderHTML = (rawHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
@@ -24,13 +25,20 @@ const Quote = () => {
     })
   }
 
+  function handleMouseHover() {
+    setIsHovering(!isHovering)
+  }
+
   return (
-    <Container className='Quote'>
+    <Container className='Quote'
+      onMouseEnter={handleMouseHover}
+      onMouseLeave={handleMouseHover}
+    >
       <Container className='quote-text'>
         <h5>{renderHTML( quote.text )}</h5>
       </Container>
       <Container className='quote-author'>
-        <p>- {quote.author}</p>
+        {isHovering ? <p>{renderHTML(`- ${quote.author}`)}</p> : null}
       </Container>
       <Button
       variant='light'

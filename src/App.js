@@ -27,49 +27,41 @@ const App = () => {
 
   const styles = {
     backgroundImage: `url(${image})`,
-    // height: '100',
-    // width: '100',
-    // margin: 0,
-    // objectFit: 'cover',
-    // backgroundRepeat: 'no-repeat',
-  // backgroundColor: 'red'
-}
+  }
 
-return (
-  <div
-    className='App'
-    style={styles}
-  >
-    {/* <Image
-        className='image'
-        src={image}
-      /> */}
-    <Button
-      variant='light'
-      onClick={getNewImage}
-      className='newImgBtn'
+  return (
+    <div
+      className='App'
     >
-      Get New Image
-    </Button>
-    <Container>
-      <Row className='row1'>
-        <Col />
-        <Col>
-          <Time />
-        </Col>
-        <Col />
-      </Row>
-      <Row className='row2'>
-        <Col>
-          <Weather />
-        </Col>
-        <Col>
-          <Quote />
-        </Col>
-      </Row>
-    </Container>
-  </div>
-);
+      <div
+        className='hero-img'
+        style={styles}
+      >
+        <Button
+          variant='light'
+          onClick={getNewImage}
+          className='newImgBtn'
+        >
+          Get New Image
+        </Button>
+        <Container className='content'>
+          <Row className='row1'>
+            <Col>
+              <Time className='Time'/>
+            </Col>
+          </Row>
+          <Row className='row2'>
+            <Col>
+              <Weather />
+            </Col>
+            <Col>
+              <Quote />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
+  );
 }
 
 export default App;
