@@ -10,7 +10,6 @@ const Quote = () => {
 
   useEffect(() => {
     axios.get('http://localhost:4999/api/quote').then(res => {
-      // console.log(res.data)
       setQuote(res.data)
     }).catch(err => {
       console.log(err)
@@ -19,7 +18,6 @@ const Quote = () => {
 
   function getNewQuote() {
     axios.get('http://localhost:4999/api/quote').then(res => {
-      // console.log(res.data)
       setQuote(res.data)
     }).catch(err => {
       console.log(err)
@@ -32,7 +30,7 @@ const Quote = () => {
         <h5>{renderHTML( quote.text )}</h5>
       </Container>
       <Container className='quote-author'>
-        <p>-{quote.author}</p>
+        <p>- {quote.author}</p>
       </Container>
       <Button
       variant='light'

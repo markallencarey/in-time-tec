@@ -11,7 +11,6 @@ const App = () => {
 
   useEffect(() => {
     axios.get('http://localhost:4999/api/image').then(res => {
-      // console.log(res.data)
       setImage(res.data)
     }).catch(err => {
       console.log(err)
@@ -20,7 +19,6 @@ const App = () => {
 
   function getNewImage() {
     axios.get('http://localhost:4999/api/image').then(res => {
-      // console.log(res.data)
       setImage(res.data)
     }).catch(err => {
       console.log(err)

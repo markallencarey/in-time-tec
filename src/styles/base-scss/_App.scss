@@ -3,13 +3,9 @@
 @import url(https://fonts.googleapis.com/css?family=Kiwi+Maru:300,regular,500);
 
 .App {
-  // margin: 0;
-  height: 100vh;
-  width: 100vw;
-  // background-repeat: no-repeat;
-  // position: relative;
-  // top: 0;
-  // left: 0;
+  // height: 100vh;
+  // width: 100vw;
+  background-repeat: no-repeat;
   // object-fit: cover;
   font-family: 'Kiwi Maru', Arial, Helvetica, sans-serif;
 }
@@ -18,7 +14,7 @@
 }
 
 .row2 {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .newImgBtn {

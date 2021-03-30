@@ -8,7 +8,6 @@ const Weather = () => {
 
   useEffect(() => {
     axios.get('http://localhost:4999/api/weather').then(res => {
-      console.log(res.data)
       setWeather(res.data)
     }).catch(err => {
       console.log(err)
