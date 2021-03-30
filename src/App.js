@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Image, Button, Row, Col, Container } from 'react-bootstrap'
+import { Button, Row, Col, Container } from 'react-bootstrap'
 import axios from 'axios'
 import Weather from './Components/Weather'
 import Time from './Components/Time'
@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     axios.get('http://localhost:4999/api/image').then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       setImage(res.data)
     }).catch(err => {
       console.log(err)
@@ -20,7 +20,7 @@ const App = () => {
 
   function getNewImage() {
     axios.get('http://localhost:4999/api/image').then(res => {
-      console.log(res.data)
+      // console.log(res.data)
       setImage(res.data)
     }).catch(err => {
       console.log(err)
@@ -47,23 +47,26 @@ return (
         src={image}
       /> */}
     <Button
+      variant='light'
       onClick={getNewImage}
       className='newImgBtn'
     >
       Get New Image
     </Button>
     <Container>
-      <Row>
-        <Col>
-          <Weather />
-        </Col>
-      </Row>
-      <Row>
+      <Row className='row1'>
+        <Col />
         <Col>
           <Time />
         </Col>
-          <Quote />
+        <Col />
+      </Row>
+      <Row className='row2'>
         <Col>
+          <Weather />
+        </Col>
+        <Col>
+          <Quote />
         </Col>
       </Row>
     </Container>

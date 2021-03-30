@@ -1,0 +1,23 @@
+@import '../base-scss/mixins';
+@import '../base-scss/variables';
+
+
+.Quote {
+  backdrop-filter: blur(6px) brightness(70%);
+  box-shadow: $globalBorder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+}
+
+.quote-text {
+}
+
+.quote-author {
+  display: flex;
+  justify-content: flex-end;
+}

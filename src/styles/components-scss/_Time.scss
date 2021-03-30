@@ -1,0 +1,18 @@
+@import '../base-scss/mixins';
+@import '../base-scss/variables';
+
+
+.Time {
+  backdrop-filter: blur(6px) brightness(70%);
+  box-shadow: $globalBorder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.time-h1, .time-h2 {
+  color: white;
+}

@@ -1,3 +1,7 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 @import './base-scss/App';
+
+@import './components-scss/Time';
+@import './components-scss/Quote';
+@import './components-scss/Weather';

@@ -1,5 +1,6 @@
 @import './mixins';
 @import './variables';
+@import url(https://fonts.googleapis.com/css?family=Kiwi+Maru:300,regular,500);
 
 .App {
   // margin: 0;
@@ -10,17 +11,19 @@
   // top: 0;
   // left: 0;
   // object-fit: cover;
+  font-family: 'Kiwi Maru', Arial, Helvetica, sans-serif;
 }
 
-// .image {
-//   height: 100%;
-//   width: 100%;
-//   object-fit: cover;
-// }
+.row1 {
+}
+
+.row2 {
+  margin-top: 20px;
+}
 
 .newImgBtn {
   position: relative;
   top: 2vh;
   left: 2vw;
-  // z-index: 1000;
+  box-shadow: $globalBorder;
 }
