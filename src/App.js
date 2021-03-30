@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Container, Image } from 'react-bootstrap'
+import { Image, Button, Row, Col, Container } from 'react-bootstrap'
 import axios from 'axios'
+import Weather from './Components/Weather'
+import Time from './Components/Time'
+import Quote from './Components/Quote'
 
 const App = () => {
 
@@ -15,12 +18,57 @@ const App = () => {
     })
   }, [])
 
-  return (
-    <Container className="App">
-      <h1>HELLO WORLD</h1>
-      <Image className='App-Image' fluid src={image} />
+  function getNewImage() {
+    axios.get('http://localhost:4999/api/image').then(res => {
+      console.log(res.data)
+      setImage(res.data)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  const styles = {
+    backgroundImage: `url(${image})`,
+    // height: '100',
+    // width: '100',
+    // margin: 0,
+    // objectFit: 'cover',
+    // backgroundRepeat: 'no-repeat',
+  // backgroundColor: 'red'
+}
+
+return (
+  <div
+    className='App'
+    style={styles}
+  >
+    {/* <Image
+        className='image'
+        src={image}
+      /> */}
+    <Button
+      onClick={getNewImage}
+      className='newImgBtn'
+    >
+      Get New Image
+    </Button>
+    <Container>
+      <Row>
+        <Col>
+          <Weather />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Time />
+        </Col>
+          <Quote />
+        <Col>
+        </Col>
+      </Row>
     </Container>
-  );
+  </div>
+);
 }
 
 export default App;
