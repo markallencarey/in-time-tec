@@ -9,7 +9,7 @@ const Time = () => {
 
   const radios = [
     { name: '12 Hour', value: '1' },
-    { name: '24 Hour', value: '2' }
+    { name: 'Military', value: '2' }
   ]
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Time = () => {
     } else {
       setTimeMsg('Good Night!')
     }
-  })
+  }, [time.hours, time.minutes])
 
   if (time.hours >= 12) {
     time.amPm = 'PM'
@@ -42,18 +42,25 @@ const Time = () => {
     time12 = time.hours - 12
   }
 
+  let timeRadio = 0
+  if (radioValue === '1') {
+    timeRadio = time12
+  } else {
+    timeRadio = time.hours
+  }
+
   if (time12 < 1) {
     time12 = 12
   }
 
   return (
     <Container className='Time'>
-      {/* <ButtonGroup toggle>
-        {radios.map((radio, idx) => (
+      <ButtonGroup toggle>
+        {radios.map((radio, index) => (
           <ToggleButton
-            key={idx}
+            key={index}
             type='radio'
-            variant='secondary'
+            variant='outline-secondary'
             size='sm'
             name='radio'
             value={radio.value}
@@ -63,8 +70,8 @@ const Time = () => {
             {radio.name}
           </ToggleButton>
         ))}
-      </ButtonGroup> */}
-      <h1 className='time-h1'>{time12}:{time.minutes} {time.amPm}</h1>
+      </ButtonGroup>
+      <h1 className='time-h1'>{timeRadio}:{time.minutes} {time.amPm}</h1>
       <h2 className='time-h2'>{timeMsg}</h2>
     </Container>
   )

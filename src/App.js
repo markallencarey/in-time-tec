@@ -47,7 +47,7 @@ const App = () => {
         <Container className='content'>
           <Row className='row1'>
             <Col>
-              <Time className='Time'/>
+              <Time />
             </Col>
           </Row>
           <Row className='row2'>

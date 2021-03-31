@@ -38,7 +38,7 @@ const Quote = () => {
         <h5>{renderHTML( quote.text )}</h5>
       </Container>
       <Container className='quote-author'>
-        {isHovering ? <p>{renderHTML(`- ${quote.author}`)}</p> : null}
+        {isHovering ? <h6>{renderHTML(`- ${quote.author}`)}</h6> : <h6>{renderHTML('&nbsp;')}</h6>}
       </Container>
       <Button
       variant='light'
