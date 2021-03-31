@@ -1,0 +1,36 @@
+@import './mixins';
+@import './variables';
+@import url(https://fonts.googleapis.com/css?family=Kiwi+Maru:300,regular,500);
+
+.App {
+  font-family: 'Kiwi Maru', Arial, Helvetica, sans-serif;
+}
+
+.hero-img {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  height: 100vh;
+  position: relative;
+  top: 10vh;
+}
+
+.Time {
+  max-width: 375px;
+}
+
+.row2 {
+  margin-top: 40px;
+}
+
+.newImgBtn {
+  position: relative;
+  top: 2vh;
+  left: 2vw;
+  box-shadow: $globalBorder;
+}
