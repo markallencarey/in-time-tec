@@ -13,14 +13,20 @@ const Time = () => {
   ]
 
   useEffect(() => {
-    const today = new Date()
+    
+    setInterval(() => {
+      
+      const today = new Date()
+      
+      setTime({
+        hours: today.getHours(),
+        minutes: today.getMinutes().toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false }),
+        seconds: today.getSeconds(),
+        amPm: 'AM'
+      })
+    }, 500)
 
-    setTime({
-      hours: today.getHours(),
-      minutes: today.getMinutes().toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false }),
-      seconds: today.getSeconds(),
-      amPm: 'AM'
-    })
+    // clearInterval(interval)
 
     if (time.hours >= 6 && time.hours <= 12) {
       setTimeMsg('Good Morning!')
