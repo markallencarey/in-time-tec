@@ -20,10 +20,6 @@
   top: 10vh;
 }
 
-.Time {
-  max-width: 375px;
-}
-
 .row2 {
   margin-top: 40px;
 }
@@ -33,4 +29,47 @@
   top: 2vh;
   left: 2vw;
   box-shadow: $globalBorder;
+}
+
+@media (max-width: 450px) {
+  .row2 {
+    margin-top: 20px;
+  }
+
+  .Quote {
+    margin-top: 20px;
+  }
+
+  .content {
+    top: 5vh;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+  
 }

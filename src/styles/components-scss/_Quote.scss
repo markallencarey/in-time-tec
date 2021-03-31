@@ -7,11 +7,12 @@
   box-shadow: $globalBorder;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 12px;
   padding: 20px 10px;
   color: white;
+  min-height: 20vh;
 }
 
 .quote-text {
@@ -20,4 +21,8 @@
 .quote-author {
   display: flex;
   justify-content: flex-end;
+}
+
+.newQuoteBtn {
+  margin-top: 10px;
 }

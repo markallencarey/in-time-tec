@@ -35,18 +35,19 @@ const Quote = () => {
       onMouseLeave={handleMouseHover}
     >
       <Container className='quote-text'>
-        <h5>{renderHTML( quote.text )}</h5>
+        <h5>{renderHTML(quote.text)}</h5>
       </Container>
       <Container className='quote-author'>
-        {isHovering ? <h6>{renderHTML(`- ${quote.author}`)}</h6> : <h6>{renderHTML('&nbsp;')}</h6>}
+        {isHovering ? <h5>{renderHTML(`- ${quote.author}`)}</h5> : <h5>{renderHTML('&nbsp;')}</h5>}
       </Container>
       <Button
-      variant='light'
-      onClick={getNewQuote}
-      className='newQuoteBtn'
-    >
-      Get New Quote
-    </Button>
+        variant='light'
+        onClick={getNewQuote}
+        className='newQuoteBtn'
+        size='sm'
+      >
+        <h5 className='m-auto'>Get New Quote</h5>
+      </Button>
     </Container>
   )
 }
