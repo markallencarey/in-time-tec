@@ -40,8 +40,10 @@ const Time = () => {
   let time12 = 0
   if (time.hours > 12) {
     time12 = time.hours - 12
-  } else if (time.hours === 0) {
+  } else if (time.hours < 1) {
     time12 = 12
+  } else {
+  time12 = time.hours
   }
 
   let timeRadio = 0
@@ -49,10 +51,6 @@ const Time = () => {
     timeRadio = time12
   } else {
     timeRadio = time.hours.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
-  }
-
-  if (time12 < 1) {
-    time12 = 12
   }
 
   return (
