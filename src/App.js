@@ -41,8 +41,9 @@ const App = () => {
           variant='light'
           onClick={getNewImage}
           className='newImgBtn'
+          size='sm'
         >
-          Get New Image
+          <h5 className='m-auto'>Get New Image</h5>
         </Button>
         <Container className='content'>
           <Row className='row1'>
@@ -51,10 +52,10 @@ const App = () => {
             </Col>
           </Row>
           <Row className='row2'>
-            <Col>
+            <Col sm={12} md={6}>
               <Weather />
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
               <Quote />
             </Col>
           </Row>

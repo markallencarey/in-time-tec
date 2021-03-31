@@ -40,13 +40,15 @@ const Time = () => {
   let time12 = 0
   if (time.hours > 12) {
     time12 = time.hours - 12
+  } else if (time.hours === 0) {
+    time12 = 12
   }
 
   let timeRadio = 0
   if (radioValue === '1') {
     timeRadio = time12
   } else {
-    timeRadio = time.hours
+    timeRadio = time.hours.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
   }
 
   if (time12 < 1) {
@@ -60,7 +62,7 @@ const Time = () => {
           <ToggleButton
             key={index}
             type='radio'
-            variant='outline-secondary'
+            variant='secondary'
             size='sm'
             name='radio'
             value={radio.value}
